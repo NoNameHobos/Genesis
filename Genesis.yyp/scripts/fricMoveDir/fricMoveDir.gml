@@ -39,19 +39,19 @@ else
 	yspeed = clamp(yspeed + yacc, -MOVE_SPEED * abs(sin(pi/180*angle)), MOVE_SPEED * abs(sin(pi/180*angle)));
 
 
-/*if (place_meeting(x, y + yspeed, Solid)) {
+if (place_meeting(x, y + ceil(yspeed), Solid)) {
 	while (!place_meeting(x, y + sign(yspeed), Solid)) {
 		y += sign(yspeed);
 	}
 	yspeed = 0;
 }
+y += floor(yspeed);
 
-if (place_meeting(x + xspeed, y, Solid)) {
+if (place_meeting(x + ceil(xspeed), y, Solid)) {
 	while(!place_meeting(x + sign(xspeed), y, Solid)) {
 		x += sign(xspeed);
 	}
 	xspeed = 0;
-}*/
+}
 
-x += xspeed;
-y += yspeed;
+x += floor(xspeed);

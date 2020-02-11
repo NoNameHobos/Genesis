@@ -3,16 +3,6 @@
 #region Death
 if(hp <= 0) {
 	//Choose amount of drops based on hp_max floor(hp_max/40)
-	var drops = 3 + round(random(floor(hp_max/40)));
-	for(var i = 0; i < drops; i++) {
-		//2 exp balls : 1 item
-		var varX = choose(-1, 1) * random(120 * image_xscale);
-		var varY = choose(-1, 1) * random(120 * image_yscale);
-		var xp = createDrop(x + varX, y + varY, "EXP");
-		var varX = choose(-1, 1) * random(120 * image_xscale);
-		var varY = choose(-1, 1) * random(120 * image_yscale);
-		var xp = createDrop(x + varX, y + varY, "EXP");
-	}
 	instance_destroy();
 } //Die
 #endregion

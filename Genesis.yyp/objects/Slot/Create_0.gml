@@ -3,3 +3,4 @@
 init_x = x;
 init_y = y;
 overSlot = false;
+slotSprite = spr_slot;

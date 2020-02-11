@@ -18,3 +18,13 @@ enum ENEMY {
 	ALERT,
 	ATTACK
 }
+enum SLOT_TYPE {
+	INVENTORY,
+	EQUIPMENT
+}
+
+
+enum INV_STATE {
+	hidden,
+	show
+}

@@ -33,9 +33,14 @@
 #endregion
 #region Inventory key check
 	if(keyboard_check_pressed(vk_tab)) {
-		if(inventory.i_state == invState.hidden)
-			inventory.i_state = invState.show;
-		else inventory.i_state = invState.hidden;
+		if(inventory.i_state == INV_STATE.hidden)
+			inventory.i_state = INV_STATE.show;
+		else inventory.i_state = INV_STATE.hidden;
+	}
+	if(keyboard_check_pressed(ord("C"))) {
+		if(equip.i_state == INV_STATE.hidden)
+			equip.i_state = INV_STATE.show;
+		else equip.i_state = INV_STATE.hidden;
 	}
 	for(var i = 0; i < array_length_1d(hotbarKey); i++) {
 		if(keyboard_check_pressed(hotbarKey[i])) {
@@ -46,9 +51,9 @@
 #endregion
 #region Item Collection
 
-	if(instance_exists(player_drop)) {
+	if(instance_exists(item_drop)) {
 	
-		var obj = instance_nearest(x, y, player_drop);
+		var obj = instance_nearest(x, y, item_drop);
 		if(distance_to_object(obj) < 64) {
 			with(obj) {
 				var angle = point_direction(x, y, obj_player.x, obj_player.y);

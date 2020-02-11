@@ -70,9 +70,6 @@ if(instance_exists(obj_player)) {
 		draw_text(healthX + healthBarWidth/2, healthY - 3, string(round(obj_player.hp)) + "/" + string(round(obj_player.hp_max)));
 		draw_text(stamX + stamBarWidth/2, stamY -3, string(round(obj_player.stam)) + "/" + string(round(obj_player.stam_max)));
 	}
-	
-	
-	draw_text(300, 300, showStats);
 	#endregion
 	#region Inventory Render
 	var invWidth = array_height_2d(obj_player.inventory.inv);
@@ -80,7 +77,7 @@ if(instance_exists(obj_player)) {
 	var marginX = 4;
 	var marginY = 4;
 
-	if(obj_player.inventory.i_state == invState.show) {
+	if(obj_player.inventory.i_state == INV_STATE.show) {
 		with(obj_player.inventory) {
 			var invX1 = inv[0, 0].init_x - sprite_get_width(spr_slot)/2 - marginX;
 			var invY1 = inv[0, 0].init_y - sprite_get_height(spr_slot)/2 - marginY;
@@ -110,7 +107,7 @@ with(Slot) {
 		else if(linkedInventory == obj_player.hotbar)
 			draw_set_alpha(1);
 			
-		draw_sprite(spr_slot, overSlot, init_x, init_y);
+		draw_sprite(slotSprite, overSlot, init_x, init_y);
 		
 		if(item != undefined && quantity > 0) {
 			drawSlotItem(self);

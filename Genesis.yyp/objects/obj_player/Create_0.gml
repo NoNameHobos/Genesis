@@ -36,7 +36,8 @@ event_inherited();
 					 view_hport[0]-sprite_get_height(spr_slot),
 					 HOTBAR_SIZE, 1
 	);
+	equip = instance_create_layer(0, 0, "UI", equipController);
 	with(hotbar) {
-		i_state = invState.show;
+		i_state = INV_STATE.show;
 	}
 #endregion

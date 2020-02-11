@@ -5,9 +5,9 @@
 #region update slot draw
 	for(var i = 0; i < array_height_2d(inv); i++) {
 		for(var j = 0; j < array_length_2d(inv, i); j++) {
-			if(i_state == invState.show) {
+			if(i_state == INV_STATE.show) {
 				inv[i, j].isVisible = true;
-			} else if(i_state == invState.hidden) inv[i, j].isVisible = false;
+			} else if(i_state == INV_STATE.hidden) inv[i, j].isVisible = false;
 		}
 	}
 #endregion

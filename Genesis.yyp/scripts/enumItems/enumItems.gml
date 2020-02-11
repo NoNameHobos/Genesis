@@ -1,0 +1,5 @@
+enum ITEMS {
+	HEALTH_POT,
+	STAM_POT,
+	MANA_POT,
+}

@@ -13,7 +13,7 @@
 	var fric = 0.65;
 
 	if(distance_to_point(mouse_x, mouse_y) > sprite_width/2) fricMoveDir(input, angle, MOVE_SPEED, fric);
-	image_angle = angle;
+	imageAngle = angle;
 #endregion
 #region State Machine
 	switch(pState) {

@@ -9,6 +9,7 @@ event_inherited();
 	MOVE_SPEED = 6;
 	pState = PLAYER.IDLE;
 	attackAngle = undefined;
+	imageAngle = 0;
 	frame = 0;
 #endregion
 #region INIT HOTKEYS

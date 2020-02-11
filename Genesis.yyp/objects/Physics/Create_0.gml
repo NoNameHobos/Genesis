@@ -5,3 +5,5 @@ xacc = 0;
 yspeed = 0;
 yacc = 0;
 frame = 0;
+xfraction = 0;
+yfraction = 0;

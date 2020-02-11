@@ -39,19 +39,31 @@ else
 	yspeed = clamp(yspeed + yacc, -MOVE_SPEED * abs(sin(pi/180*angle)), MOVE_SPEED * abs(sin(pi/180*angle)));
 
 
-if (place_meeting(x, y + ceil(yspeed), Solid)) {
+//Re apply fractions
+xspeed += xfraction;
+yspeed += yfraction;
+
+//store and remove fractions
+xfraction = xspeed - (floor(abs(xspeed)) * sign(xspeed));
+xspeed -= xfraction;
+yfraction = yspeed - (floor(abs(yspeed)) * sign(yspeed));
+yspeed -= yfraction;
+
+
+
+if (place_meeting(x, y + yspeed, Solid)) {
 	while (!place_meeting(x, y + sign(yspeed), Solid)) {
 		y += sign(yspeed);
 	}
 	yspeed = 0;
 }
-y += floor(yspeed);
+y += yspeed;
 
-if (place_meeting(x + ceil(xspeed), y, Solid)) {
+if (place_meeting(x + xspeed, y, Solid)) {
 	while(!place_meeting(x + sign(xspeed), y, Solid)) {
 		x += sign(xspeed);
 	}
 	xspeed = 0;
 }
 
-x += floor(xspeed);
+x += xspeed;

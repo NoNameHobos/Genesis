@@ -5,14 +5,15 @@ if(mouse_check_button_pressed(mb_left)) {
 	
 	if(slot != undefined) {
 		if(slot.overSlot) {
-		
-			if(item == undefined) {
-				item = slot.item;
-				quantity = slot.quantity;
-				slot.item = undefined;
-				slot.quantity = 0;
+			if(slot.item != item) {
+				var oldItem = slot.item;
+				var oldQuant = slot.quantity;
+				slot.item = item;
+				slot.quantity = quantity;
+				item = oldItem;
+				quantity = oldQuant;
 			} else {
-				addToInv(obj_player.inventory.inv, item, quantity, slot);
+				slot.quantity += quantity;
 				item = undefined;
 				quantity = 0;
 			}

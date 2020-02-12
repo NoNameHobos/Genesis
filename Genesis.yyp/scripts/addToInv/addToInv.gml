@@ -23,12 +23,16 @@ if(argument_count < 4) {
 
 //Add item to inv
 if(slot.item == item) {
-		slot.quantity += quantity;
-		return 0;
+	slot.quantity += quantity;
+	return 0;
 }
 else if(slot.item == undefined) {
-		slot.quantity = quantity;
-		slot.item = item;
-		return 0;
+	slot.quantity = quantity;
+	slot.item = item;
+	return 0;
+} else if(slot.item != item) {
+	oldItem = slot.item;
+	oldQuantity = slot.quantity;
+	return 0;
 }
 else return -1;

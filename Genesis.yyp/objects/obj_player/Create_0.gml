@@ -32,12 +32,12 @@ event_inherited();
 
 #region create inventory
 	var HOTBAR_SIZE = 4;
-	inventory = initInv(35, 105, INV_WIDTH, INV_HEIGHT);
+	inventory = initInv(0, 105, INV_WIDTH, INV_HEIGHT);
 	hotbar = initInv(view_wport[0]/2-sprite_get_width(spr_slot)*HOTBAR_SIZE/2,
 					 view_hport[0]-sprite_get_height(spr_slot),
 					 HOTBAR_SIZE, 1
 	);
-	equip = instance_create_layer(0, 0, "UI", equipController);
+	equip = instance_create_layer(32, view_hport[0]-3*sprite_get_height(spr_slot) + 24, "UI", equipController);
 	with(hotbar) {
 		i_state = INV_STATE.show;
 	}

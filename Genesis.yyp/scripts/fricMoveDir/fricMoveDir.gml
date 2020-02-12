@@ -38,7 +38,7 @@ if(yacc == 0)
 else
 	yspeed = clamp(yspeed + yacc, -MOVE_SPEED * abs(sin(pi/180*angle)), MOVE_SPEED * abs(sin(pi/180*angle)));
 
-
+/*
 //Re apply fractions
 xspeed += xfraction;
 yspeed += yfraction;
@@ -48,7 +48,7 @@ xfraction = xspeed - (floor(abs(xspeed)) * sign(xspeed));
 xspeed -= xfraction;
 yfraction = yspeed - (floor(abs(yspeed)) * sign(yspeed));
 yspeed -= yfraction;
-
+*/
 
 
 if (place_meeting(x, y + yspeed, Solid)) {

@@ -99,19 +99,21 @@ if(instance_exists(obj_player)) {
 	}
 	#endregion
 }
-
+#region Slot Draw Code
 with(Slot) {
 	if(isVisible) {
-		if(linkedInventory == obj_player.inventory)
+		if(linkedInventory == obj_player.inventory or linkedInventory == obj_player.equip)
 			draw_set_alpha(0.6);
 		else if(linkedInventory == obj_player.hotbar)
 			draw_set_alpha(1);
-			
-		draw_sprite(slotSprite, overSlot, init_x, init_y);
 		
 		if(item != undefined && quantity > 0) {
+			draw_sprite(spr_slot, overSlot, init_x, init_y);
 			drawSlotItem(self);
+		} else {
+			draw_sprite(slotSprite, overSlot, init_x, init_y);
 		}
 		draw_set_alpha(1);
 	}
 }
+#endregion

@@ -12,8 +12,8 @@ var view_y = camera_get_view_y(view_camera[0]);
 var view_width = camera_get_view_width(view_camera[0]);
 var view_height = camera_get_view_height(view_camera[0]);
 
-var xx = view_x + view_width/3 * 2;   //Equip X
-var yy = view_y + view_height/3 * 2;  //Equip Y
+var xx = view_x + x;   //Equip X
+var yy = view_y + y;  //Equip Y
 
 var slotWidth = sprite_get_width(spr_slot) + 4;
 var slotHeight = sprite_get_height(spr_slot) + 4;
